@@ -2,12 +2,11 @@ import { INewsResponse, ISourcesResponse } from '../../types';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
-    // Получаем список источников новостей
+
     public getSources(callback: (data: ISourcesResponse) => void): void {
         super.getResp({ endpoint: 'sources' }, callback);
     }
 
-    // Получаем список новостей по клику на источник
     public getNews(e: Event, callback: (data: INewsResponse) => void): void {
         let target = e.target as HTMLElement;
         const container = e.currentTarget as HTMLElement;
