@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -10,7 +10,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "types": ["node"] 
+    "rootDir": "./src",
+    "types": ["node"]
   },
   "include": ["src/**/*"]
 }
