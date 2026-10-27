@@ -2,8 +2,8 @@ import Loader from './loader';
 
 class AppLoader extends Loader {
     constructor() {
-        super(process.env.API_URL || 'https://onrender.com', {
-            apiKey: process.env.API_KEY || '',
+        super('https://railway.app', {
+            apiKey: process.env.API_KEY || '492b4931a26d400192d6e379024f2b90',
         });
     }
 }
