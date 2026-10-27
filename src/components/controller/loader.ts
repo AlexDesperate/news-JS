@@ -1,15 +1,14 @@
-import { HttpMethod, IRequestOptions } from '../../types'
+import { HttpMethod, IRequestOptions } from '../../types';
 
 class Loader {
-
     protected baseLink: string;
     private options: IRequestOptions;
 
     constructor(baseLink: string, options: IRequestOptions) {
+
         this.baseLink = baseLink;
         this.options = options;
     }
-
 
     public getResp<T>(
         { endpoint, options = {} }: { endpoint: string; options?: IRequestOptions },
@@ -26,22 +25,20 @@ class Loader {
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
-
         return res;
     }
 
-
     private makeUrl(options: IRequestOptions, endpoint: string): string {
-        const urlOptions: IRequestOptions = { ...this.options, ...options };
-        let url = `${this.baseLink}${endpoint}?`;
+    const urlOptions: IRequestOptions = { ...this.options, ...options };
+    
+    let url = `${this.baseLink}/${endpoint}?`;
 
-        Object.keys(urlOptions).forEach((key: string) => {
-            url += `${key}=${urlOptions[key]}&`;
-        });
+    Object.keys(urlOptions).forEach((key: string) => {
+        url += `${key}=${urlOptions[key]}&`;
+    });
 
-        return url.slice(0, -1);
-    }
-
+    return url.slice(0, -1);
+}
 
     private load<T>(
         method: HttpMethod, 

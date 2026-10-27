@@ -12,7 +12,7 @@ class App {
     }
 
     public start(): void {
-        const sourcesContainer = document.querySelector('.sources');
+        const sourcesContainer = document.querySelector('.sources.buttons');
         
         if (sourcesContainer) {
             sourcesContainer.addEventListener('click', (e: Event) => 
