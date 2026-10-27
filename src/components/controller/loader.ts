@@ -1,4 +1,4 @@
-import { HttpMethod, IRequestOptions } from '../types';
+import { HttpMethod, IRequestOptions } from '../../types'
 
 class Loader {
 
